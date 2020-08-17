@@ -1,0 +1,80 @@
+
+#tracksList {
+    font-size: larger;
+    height: 20em;
+    overflow-y: scroll;
+}
+
+.track {
+    cursor: pointer;
+    border-style: solid;
+    border-width: thin;    
+    border-color: white;
+}
+
+.current-track{
+    /* background-color: brown; */
+    /* color: white; */
+    border-color: royalblue;
+}
+
+.track:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+/* #playpause {
+    text-align: center;
+} */
+
+.player-control {
+
+    user-select: none;
+    -moz-user-select: none;
+
+    font-size: 3em;
+    cursor: pointer;
+    color: royalblue;
+    width: 1.3em;
+    height: 1.3em;
+    text-align: center;
+    
+    
+    /* Border styles */
+    border: solid;
+    border-width: thin;
+    border-color: royalblue;
+    border-radius: 2em;
+}
+
+.player-control:hover{
+    background-color: royalblue;
+    color: white;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+#seek {
+    width: 50em;
+    cursor: pointer;
+}
+
+.control-panel{
+    display: flex;
+}
+
+.play-controls{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 4;
+}
+
+
+#volume{
+    -webkit-appearance: slider-vertical;
+    height: 6em;
+    width: 3em;
+}
