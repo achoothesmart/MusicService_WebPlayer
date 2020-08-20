@@ -54,7 +54,8 @@ app.use('/', (req, res, next)=>{
 
 
 app.listen(port,()=>{
-    console.log(`Music Service is running at ${domain}:${port}`);
+    console.log(`\nMusic Service is running at: \t${domain}:${port}/tracks`);
+    console.log(`Access Web Player at: \t\t${domain}:${port}/player`);
 });
 
 
@@ -67,7 +68,10 @@ async function scanMusicSourceAsync(dir, rel_path){
     let tracks = [];
     let fileEnts = await fs.promises.readdir( dir, {withFileTypes: true});
     //console.log(fileEnts);
-    fileEnts.forEach(fileEnt =>{
+    fileEnts.forEach((fileEnt, index) =>{
+        if(index === 0){
+            console.log(fileEnt);
+        }
         let extn = path.extname(fileEnt.name);
         // // Recursive Call for internal directories
         // if(fileEnt.isDirectory()){
@@ -83,7 +87,7 @@ async function scanMusicSourceAsync(dir, rel_path){
 
         if(fileEnt.isFile() && extn==='.mp3'){
             tracks.push({
-                file_name : fileEnt.name, 
+                track_name : fileEnt.name, 
                 extn: extn,
                 // dir: dir,
                 // url: `${domain}:${port}/${rel_path.join('/')}/${fileEnt.name}`

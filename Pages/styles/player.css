@@ -32,6 +32,8 @@
     user-select: none;
     -moz-user-select: none;
 
+    cursor: pointer;
+
     font-size: 3em;
     cursor: pointer;
     color: royalblue;
