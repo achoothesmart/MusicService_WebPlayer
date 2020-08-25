@@ -1,3 +1,7 @@
+body{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
 
 #tracksList {
     font-size: larger;
@@ -15,12 +19,21 @@
 .current-track{
     /* background-color: brown; */
     /* color: white; */
+    background-color: rgb(230, 115, 48);
+    color: white;
+}
+
+.selected-track{
+    /* background-color: brown; */
+    /* color: white; */
     border-color: royalblue;
+    font-weight: bold;
 }
 
 .track:hover {
-    background-color: royalblue;
-    color: white;
+    /* background-color: royalblue;
+    color: white; */
+    font-weight: bold;
 }
 
 /* #playpause {
@@ -55,6 +68,13 @@
     
 }
 
+.player-control-mini{
+    font-size: 2em;
+    width: 1.3em;
+    height: 1.3em;
+    cursor: pointer;
+}
+
 .hidden {
     display: none;
 }
@@ -79,4 +99,29 @@
     -webkit-appearance: slider-vertical;
     height: 6em;
     width: 3em;
+}
+/* 
+.fav_icon{
+    font-size: 1.5em;
+} */
+
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.menu-item{
+    
+    padding: 1em;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 1em;
+    border-color: royalblue;
+}
+
+.menu-item:hover{
+    background-color: royalblue;
+    color: white;
 }

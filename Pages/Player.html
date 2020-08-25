@@ -13,7 +13,21 @@
 	<table>
 		<tr>
 			<td>
-				<div id="tracksList">
+				<div class="menu">
+					<div id="btnAllTracks" class="menu-item">
+						All Tracks
+					</div>
+					<div id="btnFavTracks" class="menu-item">
+						Favourites
+					</div>
+				</div>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			
+			<td>
+				<div tabindex="0" id="tracksList">
 					No Tracks loaded, kindly check your Music Service
 				</div>
 			</td>
@@ -26,10 +40,14 @@
 					
 					<div class="control-panel">
 						<div class="play-controls">
-							<span id="btn_prev" class="player-control" title="Previous">&lt;&lt;</span>						
-							<span id="btn_play" class="player-control" title="Play">▶️</span>
-							<span id="btn_pause" class="player-control hidden" title="Pause">| |</span>
-							<span id="btn_next" class="player-control" title="Next">&gt;&gt;</span>
+							<span>
+								Play Random
+								<input tabindex="0" type="checkbox" id="chk_random" class="player-control-mini" title="Play Random"/>					
+							</span>
+							<span tabindex="0" id="btn_prev" class="player-control" title="Previous">&lt;&lt;</span>						
+							<span tabindex="0" id="btn_play" class="player-control" title="Play">▶️</span>
+							<span tabindex="0" id="btn_pause" class="player-control hidden" title="Pause">| |</span>
+							<span tabindex="0" id="btn_next" class="player-control" title="Next">&gt;&gt;</span>
 							
 						</div>
 						<input id="volume" type="range">
