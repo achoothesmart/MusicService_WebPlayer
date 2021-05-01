@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Player</title>
+	<link rel="stylesheet" href="./styles/player.css"/>
+</head>
+
+<body>
+
+	<table>
+		<tr>
+			<td>
+				<div class="menu">
+					<div id="btnAllTracks" class="menu-item">
+						All Tracks
+					</div>
+					<div id="btnFavTracks" class="menu-item">
+						Favourites
+					</div>
+				</div>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			
+			<td>
+				<div tabindex="0" id="tracksList">
+					No Tracks loaded, kindly check your Music Service
+				</div>
+			</td>
+
+			<td>
+				<div id="player_ui">
+					<div>Current Track :<span id="current_track"></span></div>
+					<!-- <div>Progress: <span id="progress"></span></div> -->
+					<!-- <div>Volume: <span id="volume"></span></div> -->
+					
+					<div class="control-panel">
+						<div class="play-controls">
+							<span>
+								Play Random
+								<input tabindex="0" type="checkbox" id="chk_random" class="player-control-mini" title="Play Random"/>					
+							</span>
+							<span tabindex="0" id="btn_prev" class="player-control" title="Previous">&lt;&lt;</span>						
+							<span tabindex="0" id="btn_play" class="player-control" title="Play">▶️</span>
+							<span tabindex="0" id="btn_pause" class="player-control hidden" title="Pause">| |</span>
+							<span tabindex="0" id="btn_next" class="player-control" title="Next">&gt;&gt;</span>
+							
+						</div>
+						<input id="volume" type="range">
+					</div>
+					
+					<div id="seekbar">
+						<input id="seek" type="range" />
+					</div>
+
+					<div id="lblTime" class="hidden">
+						xxx
+					</div>
+				</div>
+
+				<!-- <audio controls id="player">
+					<source src="" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio> -->
+
+				<audio id="player">
+					<source src="" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+
+			</td>
+		</tr>
+	</table>
+
+	<script src="./scripts/player.js">
+	</script>
+</body>
+
+</html>

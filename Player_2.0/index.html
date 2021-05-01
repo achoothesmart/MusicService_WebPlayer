@@ -13,23 +13,23 @@
 	<table>
 		<tr>
 			<td>
-				<div class="menu">
+				<!-- <div class="menu">
 					<div id="btnAllTracks" class="menu-item">
 						All Tracks
 					</div>
 					<div id="btnFavTracks" class="menu-item">
 						Favourites
 					</div>
-				</div>
+				</div> -->
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			
 			<td>
-				<div tabindex="0" id="tracksList">
+				<!-- <div tabindex="0" id="tracksList">
 					No Tracks loaded, kindly check your Music Service
-				</div>
+				</div> -->
 			</td>
 
 			<td>
@@ -56,9 +56,18 @@
 					<div id="seekbar">
 						<input id="seek" type="range" />
 					</div>
+
+					<div id="lblTime" class="hidden">
+						xxx
+					</div>
 				</div>
 
-				<audio controls id="player">
+				<!-- <audio controls id="player">
+					<source src="" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio> -->
+
+				<audio id="player">
 					<source src="" type="audio/mpeg">
 					Your browser does not support the audio element.
 				</audio>
@@ -66,6 +75,18 @@
 			</td>
 		</tr>
 	</table>
+
+	<div id="media-controls">
+		<div id="current-track-details" class="media-control">
+			<div>Now Playing</div>
+			<div>Chinna Chinna Aasai..</div>
+			<div>00:15 / 03:45</div>
+		</div>
+
+		<div id="Prev_Button" class="media-button">Prev</div>
+		<div id="Play_Button" class="media-button">Play</div>
+		<div id="Next_Button" class="media-button">Next</div>
+	</div>
 
 	<script src="./scripts/player.js">
 	</script>

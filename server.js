@@ -18,7 +18,7 @@ let all_tracks = [];
 
 // adding library folder to static service
 app.use(express.static(app_path.library)); // local library
-app.use(express.static(app_path.pages));
+app.use(express.static(app_path.player));
 app.use(express.static(musicSource));
 
 let rec_level = 0;
@@ -28,7 +28,7 @@ scanMusicSourceAsync(musicSource, []).then((tracks)=>{
     
     
 }).catch(err => {
-    tracksData = null;
+    // tracksData = null;
 });
 
 app.use('/tracks', (req, res, next)=>{
@@ -39,7 +39,7 @@ app.use('/tracks', (req, res, next)=>{
 });
 
 app.use('/player', (req, res, next)=>{
-    res.sendFile(path.join(app_path.pages, 'player.html'));
+    res.sendFile(path.join(app_path.player, 'index.html'));
 });
 
 // 404 handler
@@ -62,7 +62,7 @@ app.listen(port,()=>{
 
 async function scanMusicSourceAsync(dir, rel_path){
     rec_level++;
-    console.log(' >> Entering ' + rec_level);
+    // console.log(' >> Entering ' + rec_level);
     let tracks = [];
     let fileEnts = await fs.promises.readdir( dir, {withFileTypes: true});
 
@@ -80,7 +80,7 @@ async function scanMusicSourceAsync(dir, rel_path){
                 // all_tracks.push(...removeDuplicates(all_tracks, tracks));
                 // all_tracks.push(...dir_tracks);
 
-                console.log(' || Inside ' + rec_level);
+                // console.log(' || Inside ' + rec_level);
                 
                 if(rec_level === 0){
                     //all_tracks.push(...tracks);
@@ -109,7 +109,10 @@ async function scanMusicSourceAsync(dir, rel_path){
         }
         
     });
-    console.log(' << Exiting ' + rec_level);
+    // console.log(' << Exiting ' + rec_level);
+    if(rec_level <=1 ){
+        console.log('Music Loaded');
+    }
     rec_level--;
     
     return tracks;
@@ -125,8 +128,13 @@ function removeDuplicates(dest_arr, src_arr){
 }
 
 async function loadTracks(tracks){
-    // console.log(tracks);
-    processTracks(tracks, musicSource, base_url).then(processed_tracks=>{
+    
+    // processTracks(tracks, musicSource, base_url).then(processed_tracks=>{
+    //     // console.log(processed_tracks);
+    //     tracksData = processed_tracks;
+    // });
+
+    processTracks(tracks, musicSource, './').then(processed_tracks=>{
         // console.log(processed_tracks);
         tracksData = processed_tracks;
     });

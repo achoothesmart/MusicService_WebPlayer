@@ -125,3 +125,15 @@ body{
     background-color: royalblue;
     color: white;
 }
+
+#lblTime{
+    /* width: 1em;
+    height: .5em; */
+    background-color: royalblue;
+    color: white;
+    padding: 0.25em;
+
+    position: fixed;
+    top: 2px;
+    left: 100px;
+}

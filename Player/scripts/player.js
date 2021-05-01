@@ -3,11 +3,13 @@ let seek_mouse_down = false;
 let current_track_no = 0;
 let selected_track_no = 0;
 let tracks = [];
+let PlayedTracks = [];
 let fav_tracks = [];
 let volume_val = 1;
 let play_random = false;
 
-let service_url = 'http://localhost:3000/tracks';
+// let service_url = `http://localhost:3000/tracks`;
+let service_url = `${location.origin}/tracks`;
 let xhttp = new XMLHttpRequest();
 xhttp.open('GET', service_url);
 xhttp.onreadystatechange = function () {
@@ -210,6 +212,15 @@ current_track.addEventListener('click', ()=>{
     setCurrentTrack(current_track_no);
 });
 
+seekbar.addEventListener('mousemove', (event)=>{
+    // console.log(event);
+    showTime(event.screenX, event.screenY, true);
+});
+
+seekbar.addEventListener('mouseout',()=>{
+    showTime(0,0,false);
+});
+
 // Event Handlers
 
 function handleTimeUpdate() {
@@ -223,7 +234,7 @@ function handleTimeUpdate() {
 
 function setCurrentTrack(track_no) {
     try {
-        if (current_track_no != 0) {
+        if (current_track_no != 0 && track_el(current_track_no)) {
             track_el(current_track_no).classList.remove('current-track');
         }
         if (track_no != 0) {
@@ -342,5 +353,20 @@ function getRandomTrack(){
     let rnd = Math.random();
     let total = tracks.length;
     let rnd_num = total*rnd;
-    return rnd_num - (rnd_num % 1);
+    return rnd_num - (rnd_num % 1); // to remove decimal values (roundoff)
+}
+
+function showTime(x, y, display){
+    x+=250;
+    
+    if(display){
+        lblTime.classList.remove('hidden');
+        lblTime.style.top = `${y}px`;
+        lblTime.style.left = `${x}px`;
+        
+        lblTime.innerText = `${x}:${y}`;
+    }
+    else{
+        lblTime.classList.add('hidden');
+    }
 }

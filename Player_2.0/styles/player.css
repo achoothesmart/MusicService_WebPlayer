@@ -1,0 +1,158 @@
+body{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#tracksList {
+    font-size: larger;
+    height: 20em;
+    overflow-y: scroll;
+}
+
+.track {
+    cursor: pointer;
+    border-style: solid;
+    border-width: thin;    
+    border-color: white;
+}
+
+.current-track{
+    /* background-color: brown; */
+    /* color: white; */
+    background-color: rgb(230, 115, 48);
+    color: white;
+}
+
+.selected-track{
+    /* background-color: brown; */
+    /* color: white; */
+    border-color: royalblue;
+    font-weight: bold;
+}
+
+.track:hover {
+    /* background-color: royalblue;
+    color: white; */
+    font-weight: bold;
+}
+
+/* #playpause {
+    text-align: center;
+} */
+
+.player-control {
+
+    user-select: none;
+    -moz-user-select: none;
+
+    cursor: pointer;
+
+    font-size: 3em;
+    cursor: pointer;
+    color: royalblue;
+    width: 1.3em;
+    height: 1.3em;
+    text-align: center;
+    
+    
+    /* Border styles */
+    border: solid;
+    border-width: thin;
+    border-color: royalblue;
+    border-radius: 2em;
+}
+
+.player-control:hover{
+    background-color: royalblue;
+    color: white;
+    
+}
+
+.player-control-mini{
+    font-size: 2em;
+    width: 1.3em;
+    height: 1.3em;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#seek {
+    width: 50em;
+    cursor: pointer;
+}
+
+.control-panel{
+    display: flex;
+}
+
+.play-controls{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 4;
+}
+
+
+#volume{
+    -webkit-appearance: slider-vertical;
+    height: 6em;
+    width: 3em;
+}
+/* 
+.fav_icon{
+    font-size: 1.5em;
+} */
+
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.menu-item{
+    
+    padding: 1em;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 1em;
+    border-color: royalblue;
+}
+
+.menu-item:hover{
+    background-color: royalblue;
+    color: white;
+}
+
+#lblTime{
+    /* width: 1em;
+    height: .5em; */
+    background-color: royalblue;
+    color: white;
+    padding: 0.25em;
+
+    position: fixed;
+    top: 2px;
+    left: 100px;
+}
+
+
+/* ------------------New Styles----------------------- */
+
+#media-controls{
+    width: 98%;
+    height: 5em;
+    background-color: skyblue;
+    bottom: 0.5em;
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.media-control{
+    padding: 1em;
+}
